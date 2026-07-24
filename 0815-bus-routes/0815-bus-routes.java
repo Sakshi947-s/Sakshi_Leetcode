@@ -1,6 +1,8 @@
 class Solution {
     public int numBusesToDestination(int[][] routes, int source, int target) {
-        if (source == target) return 0;
+        if (source == target) {
+            return 0;
+        }
 
         Map<Integer, List<Integer>> stopToBus = new HashMap<>();
 
