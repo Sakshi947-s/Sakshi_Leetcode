@@ -5,8 +5,6 @@ class Solution {
 
         Queue<int[]> queue = new LinkedList<>();
         int fresh = 0;
-
-        // Count fresh oranges and add all rotten oranges to the queue
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 2) {
@@ -17,7 +15,6 @@ class Solution {
             }
         }
 
-        // No fresh oranges
         if (fresh == 0) return 0;
 
         int minutes = 0;
@@ -25,8 +22,6 @@ class Solution {
 
         while (!queue.isEmpty() && fresh > 0) {
             int size = queue.size();
-
-            // Process all rotten oranges for the current minute
             for (int i = 0; i < size; i++) {
                 int[] curr = queue.poll();
                 int x = curr[0];
